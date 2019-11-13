@@ -177,6 +177,11 @@ function processDuplicateFree(list, callback/* CODE HERE ONLY AFTER COMPLETING A
       return list.indexOf(item) === index;
     })
     return callback(unique);
+    // const uniqueObj = new Set(list);
+    // const unique = Array.from(uniqueObj)
+    // return callback(uniqueObj)
+
+    
 
 }
 
@@ -203,7 +208,7 @@ function getFullNames(runners/* CODE HERE */) {
   const full_names = []
   runners.forEach(function(element){
     
-      return full_names.push(`${element.last_name}, ${element.first_name}`)
+       full_names.push(`${element.last_name}, ${element.first_name}`)
   })
   return full_names;
 }
@@ -287,7 +292,7 @@ function counterMaker() {
   let count = 0;//changed the const to let
 
   return function counter() {
-    return ++count-1;
+    return count++;
   }
   // BROKEN CODE ENDS
 }
@@ -318,10 +323,10 @@ function counterMakerWithLimit(num/* CODE HERE */) {
   
     return function counter(){
       if (count <= num){
-        return ++count-1
+        return count++
       } else{
         count=0
-        return ++count - 1
+        return count++
       }
     }
   
