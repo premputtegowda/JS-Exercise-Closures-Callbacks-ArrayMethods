@@ -172,12 +172,12 @@ function processContains(item,list,callback/* CODE HERE */) {
 function processDuplicateFree(list, callback/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
  
-  return callback( function callback(list)  {
-    const uniqueElements = new Set(list);
-    const uniqueArray = Array.from(uniqueElements)
+  
+    const unique = list.filter((item, index)=> {
+      return list.indexOf(item) === index;
+    })
+    return callback(unique);
 
-    return uniqueArray;
-  })
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
